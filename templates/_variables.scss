@@ -16,9 +16,11 @@ $gray-light:             lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
 
+$btn-default-color:     #fff !default;
+$btn-default-bg:        #777 !default;
 $brand-primary:         #1063a7 !default;
 $brand-success:         #5aa910 !default;
-$brand-info:            #b80203 !default;
+$brand-info:            #5bc0de !default;
 $brand-warning:         #f1a123 !default;
 $brand-danger:          #b80203 !default;
 
