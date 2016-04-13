@@ -7,6 +7,8 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -4067,7 +4069,7 @@ tbody.collapse.in {
   text-align: left;
   background-color: #fff;
   border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid #333;
   border-radius: 4px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
@@ -7378,6 +7380,19 @@ body {
     font-family: 'Hanna', serif;*/
 }
 
+@font-face {
+  font-family: 'Supercell-Magic';
+  src: url("../fonts/Supercell-Magic.eot?#iefix") format("embedded-opentype"), url("../fonts/Supercell-Magic.woff") format("woff"), url("../fonts/Supercell-Magic.ttf") format("truetype"), url("../fonts/Supercell-Magic.svg#Supercell-Magic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: 'Supercell-Magic';
+  /*
+    font-family: 'Jeju Hallasan', serif;
+    font-family: 'Hanna', serif;*/
+}
+
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle):after {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
@@ -8067,4 +8082,11 @@ body {
 .btn-danger.btn-xs:after, .btn-group-xs > .btn-danger.btn:after {
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.dropdown-menu {
+  margin-top: 4px;
+  border-width: 3px;
+  /*background: yellow;*/
+  border-radius: 10px !important;
 }

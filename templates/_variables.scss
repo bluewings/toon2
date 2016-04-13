@@ -24,6 +24,8 @@ $brand-info:            #5bc0de !default;
 $brand-warning:         #f1a123 !default;
 $brand-danger:          #b80203 !default;
 
+$dropdown-border:       #333 !default;
+
 $brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
 $brand-success:         #5cb85c !default;
 $brand-info:            #5bc0de !default;
@@ -249,6 +251,7 @@ $cursor-disabled:                not-allowed !default;
 $dropdown-bg:                    #fff !default;
 //** Dropdown menu `border-color`.
 $dropdown-border:                rgba(0,0,0,.15) !default;
+
 //** Dropdown menu `border-color` **for IE8**.
 $dropdown-fallback-border:       #ccc !default;
 //** Divider color for between dropdown items.

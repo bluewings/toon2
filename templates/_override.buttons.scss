@@ -1,0 +1,526 @@
+// Custom 3.3.5
+// Bootswatch
+// -----------------------------------------------------
+
+@font-face {
+    font-family: 'Supercell-Magic';
+    src: url("../fonts/Supercell-Magic.eot?#iefix") format("embedded-opentype"), url("../fonts/Supercell-Magic.woff") format("woff"), url("../fonts/Supercell-Magic.ttf") format("truetype"), url("../fonts/Supercell-Magic.svg#Supercell-Magic") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+body {
+    font-family: 'Supercell-Magic';
+
+    /*
+      font-family: 'Jeju Hallasan', serif;
+      font-family: 'Hanna', serif;*/
+}
+
+@mixin shadow($width: 4px) {
+    border-width: 0 1px $width 1px;
+}
+
+// Navbar =====================================================================
+
+// Buttons ====================================================================
+
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+
+    @return $map;
+}
+
+// &.btn-lg {
+//     &:after {
+//         // box-shadow: inset 0 4px 3px -3px rgba(255, 255, 255, 0.85), inset 0 0 0 3px darken($bg-color, 10%);
+
+//         box-shadow: inset 0 4px 4px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 4px darken($bg-color, 10%);
+//     }
+// }
+
+// &.btn-sm {
+//     &:after {
+//         box-shadow: inset 0 2px 2px -1px rgba(255, 255, 255, 0.85), inset 0 0 0 2px darken($bg-color, 10%);
+
+//         // box-shadow: inset 0 4px 3px -3px rgba(255, 255, 255, 0.85), inset 0 0 0 3px darken($bg-color, 10%);
+
+//     }
+// }
+
+// &.btn-xs {
+//     &:after {
+//         box-shadow: none;
+
+//         // inset 0 0 0 2px darken($bg-color, 10%);
+//         // box-shadow: inset 0 4px 3px -3px rgba(255, 255, 255, 0.85), inset 0 0 0 3px darken($bg-color, 10%);
+
+//     }
+// }
+
+.btn-group {
+    > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+        &:after {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+            right: -1px;
+        }
+    }
+
+    > .btn:last-child:not(:first-child), > .dropdown-toggle:not(:first-child) {
+        &:after {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            left: -1px;
+        }
+    }
+
+    > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+        &:after {
+            border-radius: 0;
+            left: -1px;
+            right: -1px;
+        }
+    }
+
+ > .btn-group:last-child:not(:first-child) > .btn:first-child {
+    &:after {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    left: -1px;
+}
+}
+}
+
+.btn {
+    // padding: ($padding-base-vertical + 2) $padding-base-horizontal $padding-base-vertical;
+
+    @include shadow;
+
+    &:focus, &:active {
+        outline: none !important;
+        outline: 0;
+    }
+
+    /*font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;*/
+    z-index: 0;
+    color: #fff;
+    text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black, -1px 2px 0 rgba(0, 0, 0, 0.7), 0px 2px 0 rgba(0, 0, 0, 0.7), 1px 2px 0 rgba(0, 0, 0, 0.7);
+    position: relative;
+    overflow:hidden;
+    // margin-bottom:6px;
+
+    // box-shadow: 0 1px 0 #284c07, 0 6px 0 #284c07, 0 8px 4px 1px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(0, 0, 0, 0.5);
+    // border-width:1px !important;
+    border: none;
+
+    &:before {
+        // content:'';
+        // position:absolute;
+        // top:3px;
+        // left:3px;
+        // right:3px;
+        // width:100%;
+        // height:49%;
+        // background-color:rgba(255,255,255,.35);
+
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-color: rgba(255, 255, 255, 0.35);
+        border-radius: 1px 1px 5px 5px;
+        z-index: -1;
+    }
+
+    &:after {
+        // content: '';
+        // position: absolute;
+        // width: 4px;
+        // height: 6px;
+        // top: 5px;
+        // right: 5px;
+        // background-color: rgba(255, 255, 255, 0.75);
+        // border-radius: 10% 10px 10% 10px;
+        // z-index: -1;
+   
+    }
+
+    // border: 1px solid transparent !important;
+
+    $btn-colors: (default: (bg: $btn-default-bg),
+ primary: (bg: $btn-primary-bg),
+ success: (bg: $btn-success-bg),
+ info: (bg: $btn-info-bg),
+ warning: (bg: $btn-warning-bg),
+ danger: (bg: $btn-danger-bg));
+
+    $btn-sizes: (large: (border-radius: 12px,
+ // padding-v: $padding-large-vertical ,
+ padding-h: $padding-large-horizontal,
+ flare: 10px 12px,
+ font-size: 18px,
+ height:44px
+ ),
+ base: (border-radius: 10px,
+ // padding-v: $padding-base-vertical ,
+ padding-h: $padding-base-horizontal,
+ flare: 8px 10px,
+ font-size: 14px,
+ height:32px
+ ),
+ small: (border-radius: 8px,
+ // padding-v: $padding-small-vertical,
+ padding-h: $padding-small-horizontal,
+ flare: 7px 8px,
+ font-size: 12px,
+ height:28px),
+ xs: (border-radius: 6px,
+ // padding-v: $padding-xs-vertical ,
+ padding-h: $padding-xs-horizontal,
+ flare: 5px 6px,
+ font-size: 10px,
+ height:22px)
+ );
+
+@mixin button-deco-shadow($color, $margin) {
+    $margin-top: $margin * -1 + 3;
+    $margin-bottom: $margin - 1;
+            box-shadow: 0 $margin 0 darken($color, 20%) !important;
+            margin-top: $margin-top;
+            margin-bottom: $margin-bottom;
+    &:hover {
+        box-shadow: 0 ($margin - 1) 0 darken($color, 20%) !important;
+            margin-top: $margin-top + 1;
+            margin-bottom: $margin-bottom - 1;
+    }
+    &:active {
+        box-shadow: 0 1px 0 darken($color, 20%) !important;
+            margin-top: 2px;
+            margin-bottom: 0;
+    }
+}
+
+    @mixin button-deco-class($className) {
+        $bg-color: map-deep-get($btn-colors, $className, "bg");
+
+        &-#{$className} {
+            background-color: $bg-color;
+            &:hover, &:focus, &:active {
+                background-color: $bg-color !important;
+            }
+            @include button-deco-shadow($bg-color, 5px);
+            // box-shadow: 0 5px 0 darken($bg-color, 20%);
+            // margin-top: -5px;
+            // margin-bottom: 5px;
+            // &:hover {
+            //     box-shadow: 0 4px 0 darken($bg-color, 20%);
+            //     margin-top: -4px;
+            //     margin-bottom: 4px;
+            // }
+            
+
+            &:after {
+                // box-shadow: inset 0 4px 4px -3px rgba(255, 255, 255, 0.85), inset 0 0 0 3px darken($bg-color, 10%);
+                box-shadow: inset 0 3px 3px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 3px darken($bg-color, 10%);
+            }
+
+            &.btn-lg {
+                @include button-deco-shadow($bg-color, 6px);
+                &:after {
+                    // box-shadow: inset 0 4px 3px -3px rgba(255, 255, 255, 0.85), inset 0 0 0 3px darken($bg-color, 10%);
+
+                    box-shadow: inset 0 4px 4px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 4px darken($bg-color, 10%);
+                }
+            }
+
+            &.btn-sm {
+                @include button-deco-shadow($bg-color, 4px);
+                &:after {
+                    box-shadow: inset 0 2px 2px -1px rgba(255, 255, 255, 0.85), inset 0 0 0 2px darken($bg-color, 10%);
+
+                    // box-shadow: inset 0 4px 3px -3px rgba(255, 255, 255, 0.85), inset 0 0 0 3px darken($bg-color, 10%);
+               
+                }
+            }
+
+            &.btn-xs {
+                @include button-deco-shadow($bg-color, 3px);
+                &:after {
+                    box-shadow: none;
+
+                    // inset 0 0 0 2px darken($bg-color, 10%);
+                    // box-shadow: inset 0 4px 3px -3px rgba(255, 255, 255, 0.85), inset 0 0 0 3px darken($bg-color, 10%);
+               
+                }
+            }
+
+            // &.btn-xs {
+            //     &:after {
+            //         box-shadow: inset 0 4px 3px -3px rgba(255, 255, 255, 0.85), inset 0 0 0 3px darken($bg-color, 10%);
+            //     }
+            // }
+       
+        }
+    }
+
+    @mixin button-deco-size($size) {
+        $border-radius: map-deep-get($btn-sizes, $size, "border-radius");
+        $flare: map-deep-get($btn-sizes, $size, "flare");
+        $height: map-deep-get($btn-sizes, $size, "height");
+
+
+        border-radius: $border-radius;
+        // padding: map-deep-get($btn-sizes, $size, "padding-v") map-deep-get($btn-sizes, $size, "padding-h");
+        padding:  0 map-deep-get($btn-sizes, $size, "padding-h");
+        height: $height;
+        line-height: $height;
+        font-size: map-deep-get($btn-sizes, $size, "font-size");
+
+        &:after {
+            background-image: url("/assets/img/blink.png");
+            background-repeat: no-repeat;
+            background-size: $flare;
+            background-position: top right;
+            content: '';
+            position: absolute;
+
+            // border:1px solid black;
+            border-radius: $border-radius;
+            top: 0;
+            left: 0;
+            right: 0;
+
+            // width: 100%;
+            height: 100%;
+            border-radius: $border-radius;
+
+            // top:3px;
+            // right:3px;
+            // left:3px;
+            // bottom:3px;
+            // width: 4px;
+            // height: 6px;
+            // top: 5px;
+            // right: 5px;
+            // background-color: rgba(255, 255, 255, 0.75);
+            // border-radius: 10% 10px 10% 10px;
+            z-index: -1;
+        }
+    }
+
+    // $btn-base-border-radius: 12px;
+    // $btn-large-border-radius: 10px;
+    // $btn-small-border-radius: 8px;
+    // $btn-xs-border-radius: 6px;
+
+    @include button-deco-size(base);
+
+    // border-radius: $btn-base-border-radius;
+    // padding: ($padding-base-vertical + 1) $padding-base-horizontal;
+
+    &-lg,
+    &-group-lg > .btn {
+        @include button-deco-size(large);
+    }
+
+    &-sm,
+    &-group-sm > .btn {
+        @include button-deco-size(small);
+    }
+
+    &-xs,
+    &-group-xs > .btn {
+        @include button-deco-size(xs);
+    }
+
+    // @mixin createNumbered($num, $className) {
+    //     $foo: "";
+
+    //     @for $i from 1 through $num {
+    //         $foo: $foo + "." + $className + "-" + $i + ", ";
+    //     }
+
+    //     #{$foo} {
+    //         @content;
+    //     }
+    // }
+
+    // color: $color;
+    // background-color: $background;
+    // border-color: $border;
+
+    // &:focus,
+    // &.focus {
+    //   color: $color;
+    //   background-color: darken($background, 10%);
+    //       border-color: darken($border, 25%);
+    // }
+
+    @include button-deco-class(default);
+
+    @include button-deco-class(primary);
+
+    @include button-deco-class(success);
+
+    @include button-deco-class(info);
+
+    @include button-deco-class(warning);
+
+    @include button-deco-class(danger);
+
+    //     &-primary {
+    //         // box-shadow: 0 0 0 3px $btn-primary-bg;
+    //         //     box-shadow: inset 0 4px 3px -3px rgba(255, 255, 255, 0.85), inset 0 0 0 3px #0c4778;
+
+    //         // border-color: $btn-primary-border;
+
+    //        box-shadow: 0 6px 0 darken($btn-primary-bg, 20%);
+    // //         0 6px 0 #530101
+    // //         // 0 8px 4px 1px rgba(0, 0, 0, 0.5),
+    // //         // 0 0 1px 1px rgba(0, 0, 0, 0.5);
+    // // ;
+    //     }
+
+    // margin: 20px;
+
+    // &:hover {
+    //     margin-top: 1px;
+    //     border-bottom-width: 3px;
+    // }
+
+    // &:active {
+    //     margin-top: 2px;
+    //     border-bottom-width: 2px;
+
+    //     @include box-shadow(none);
+    // }
+
+    // &-lg,
+    // &-group-lg > .btn {
+    //     padding: ($padding-large-vertical + 2) $padding-large-horizontal $padding-large-vertical;
+    //     line-height: 15px;
+    // }
+
+    // &-sm,
+    // &-group-sm > .btn {
+    //     padding: ($padding-small-vertical + 2) $padding-small-horizontal $padding-small-vertical;
+    // }
+
+    // &-xs,
+    // &-group-xs > .btn {
+    //     padding: ($padding-xs-vertical + 2) $padding-xs-horizontal $padding-xs-vertical;
+    // }
+
+    // &-default:hover,
+    // &-default:focus,
+    // &-group.open .dropdown-toggle.btn-default {
+    //     background-color: $btn-default-bg;
+    //     border-color: $btn-default-border;
+    // }
+
+    // &-primary:hover,
+    // &-primary:focus,
+    // &-group.open .dropdown-toggle.btn-primary {
+    //     background-color: $btn-primary-bg;
+    //     border-color: $btn-primary-border;
+    // }
+
+    // &-success:hover,
+    // &-success:focus,
+    // &-group.open .dropdown-toggle.btn-success {
+    //     background-color: $btn-success-bg;
+    //     border-color: $btn-success-border;
+    // }
+
+    // &-info:hover,
+    // &-info:focus,
+    // &-group.open .dropdown-toggle.btn-info {
+    //     background-color: $btn-info-bg;
+    //     border-color: $btn-info-border;
+    // }
+
+    // &-warning:hover,
+    // &-warning:focus,
+    // &-group.open .dropdown-toggle.btn-warning {
+    //     background-color: $btn-warning-bg;
+    //     border-color: $btn-warning-border;
+    // }
+
+    // &-danger:hover,
+    // &-danger:focus,
+    // &-group.open .dropdown-toggle.btn-danger {
+    //     background-color: $btn-danger-bg;
+    //     border-color: $btn-danger-border;
+    // }
+
+    // &-group.open .dropdown-toggle {
+    //     @include box-shadow(none);
+    // }
+}
+
+// .navbar-btn {
+//     &:hover {
+//         margin-top: 8px;
+//     }
+
+//     &:active {
+//         margin-top: 9px;
+//     }
+
+//     &.btn-sm {
+//         &:hover {
+//             margin-top: 11px;
+//         }
+
+//         &:active {
+//             margin-top: 12px;
+//         }
+//     }
+
+//     &.btn-xs {
+//         &:hover {
+//             margin-top: 15px;
+//         }
+
+//         &:active {
+//             margin-top: 16px;
+//         }
+//     }
+// }
+
+// .btn-group-vertical {
+//     .btn + .btn {
+//         &:hover {
+//             border-top-width: 1px;
+//         }
+
+//         &:active {
+//             border-top-width: 2px;
+//         }
+//     }
+// }
+
+// Typography =================================================================
+
+// Tables =====================================================================
+
+// Forms ======================================================================
+
+// Navs =======================================================================
+
+// Indicators =================================================================
+
+// Progress bars ==============================================================
+
+// Containers =================================================================

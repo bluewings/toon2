@@ -1,0 +1,48 @@
+// Custom 3.3.5
+// Bootswatch
+// -----------------------------------------------------
+
+@font-face {
+    font-family: 'Supercell-Magic';
+    src: url("../fonts/Supercell-Magic.eot?#iefix") format("embedded-opentype"), url("../fonts/Supercell-Magic.woff") format("woff"), url("../fonts/Supercell-Magic.ttf") format("truetype"), url("../fonts/Supercell-Magic.svg#Supercell-Magic") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+body {
+    font-family: 'Supercell-Magic';
+
+    /*
+      font-family: 'Jeju Hallasan', serif;
+      font-family: 'Hanna', serif;*/
+}
+
+@mixin shadow($width: 4px) {
+    border-width: 0 1px $width 1px;
+}
+
+// Navbar =====================================================================
+
+// Buttons ====================================================================
+
+@import 'override.buttons';
+
+@import 'override.dropdowns';
+
+// Typography =================================================================
+
+// Tables =====================================================================
+
+// Forms ======================================================================
+
+// Navs =======================================================================
+
+// Indicators =================================================================
+
+// Progress bars ==============================================================
+
+// Containers =================================================================
