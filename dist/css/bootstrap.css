@@ -7403,9 +7403,17 @@ body {
   color: #fff;
   text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black, -1px 2px 0 rgba(0, 0, 0, 0.7), 0px 2px 0 rgba(0, 0, 0, 0.7), 1px 2px 0 rgba(0, 0, 0, 0.7);
   position: relative;
+  overflow: hidden;
   border: none;
   border-radius: 10px;
-  padding: 7px 12px;
+  padding: 0 12px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+}
+.btn:focus, .btn:active {
+  outline: none !important;
+  outline: 0;
 }
 .btn:before {
   content: '';
@@ -7436,7 +7444,10 @@ body {
 }
 .btn-lg, .btn-group-lg > .btn, .btn-group-lg > .btn {
   border-radius: 12px;
-  padding: 11px 16px;
+  padding: 0 16px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 18px;
 }
 .btn-lg:after, .btn-group-lg > .btn:after, .btn-group-lg > .btn:after {
   background-image: url("/assets/img/blink.png");
@@ -7456,7 +7467,10 @@ body {
 }
 .btn-sm, .btn-group-sm > .btn, .btn-group-sm > .btn {
   border-radius: 8px;
-  padding: 6px 10px;
+  padding: 0 10px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 12px;
 }
 .btn-sm:after, .btn-group-sm > .btn:after, .btn-group-sm > .btn:after {
   background-image: url("/assets/img/blink.png");
@@ -7476,7 +7490,10 @@ body {
 }
 .btn-xs, .btn-group-xs > .btn, .btn-group-xs > .btn {
   border-radius: 6px;
-  padding: 2px 5px;
+  padding: 0 5px;
+  height: 22px;
+  line-height: 22px;
+  font-size: 10px;
 }
 .btn-xs:after, .btn-group-xs > .btn:after, .btn-group-xs > .btn:after {
   background-image: url("/assets/img/blink.png");
@@ -7496,20 +7513,64 @@ body {
 }
 .btn-default {
   background-color: #777;
-  -webkit-box-shadow: 0 6px 0 #444444;
-          box-shadow: 0 6px 0 #444444;
+  -webkit-box-shadow: 0 5px 0 #444444;
+          box-shadow: 0 5px 0 #444444;
+  margin-top: -2px;
+  margin-bottom: 4px;
+}
+.btn-default:hover {
+  -webkit-box-shadow: 0 4px 0 #444444;
+          box-shadow: 0 4px 0 #444444;
+  margin-top: -1px;
+  margin-bottom: 3px;
+}
+.btn-default:active {
+  -webkit-box-shadow: 0 1px 0 #444444;
+          box-shadow: 0 1px 0 #444444;
+  margin-top: 2px;
+  margin-bottom: 0;
 }
 .btn-default:after {
   -webkit-box-shadow: inset 0 3px 3px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 3px #5e5e5e;
           box-shadow: inset 0 3px 3px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 3px #5e5e5e;
 }
+.btn-default.btn-lg, .btn-group-lg > .btn-default.btn {
+  -webkit-box-shadow: 0 6px 0 #444444;
+          box-shadow: 0 6px 0 #444444;
+  margin-top: -6px;
+}
+.btn-default.btn-lg:hover, .btn-group-lg > .btn-default.btn:hover {
+  -webkit-box-shadow: 0 5px 0 #444444;
+          box-shadow: 0 5px 0 #444444;
+  margin-top: -5px;
+}
 .btn-default.btn-lg:after, .btn-group-lg > .btn-default.btn:after {
   -webkit-box-shadow: inset 0 4px 4px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 4px #5e5e5e;
           box-shadow: inset 0 4px 4px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 4px #5e5e5e;
 }
+.btn-default.btn-sm, .btn-group-sm > .btn-default.btn {
+  -webkit-box-shadow: 0 4px 0 #444444;
+          box-shadow: 0 4px 0 #444444;
+  margin-top: -4px;
+}
+.btn-default.btn-sm:hover, .btn-group-sm > .btn-default.btn:hover {
+  -webkit-box-shadow: 0 3px 0 #444444;
+          box-shadow: 0 3px 0 #444444;
+  margin-top: -3px;
+}
 .btn-default.btn-sm:after, .btn-group-sm > .btn-default.btn:after {
   -webkit-box-shadow: inset 0 2px 2px -1px rgba(255, 255, 255, 0.85), inset 0 0 0 2px #5e5e5e;
           box-shadow: inset 0 2px 2px -1px rgba(255, 255, 255, 0.85), inset 0 0 0 2px #5e5e5e;
+}
+.btn-default.btn-xs, .btn-group-xs > .btn-default.btn {
+  -webkit-box-shadow: 0 3px 0 #444444;
+          box-shadow: 0 3px 0 #444444;
+  margin-top: -3px;
+}
+.btn-default.btn-xs:hover, .btn-group-xs > .btn-default.btn:hover {
+  -webkit-box-shadow: 0 2px 0 #444444;
+          box-shadow: 0 2px 0 #444444;
+  margin-top: -2px;
 }
 .btn-default.btn-xs:after, .btn-group-xs > .btn-default.btn:after {
   -webkit-box-shadow: none;
@@ -7517,20 +7578,64 @@ body {
 }
 .btn-primary {
   background-color: #1063a7;
-  -webkit-box-shadow: 0 6px 0 #072c4a;
-          box-shadow: 0 6px 0 #072c4a;
+  -webkit-box-shadow: 0 5px 0 #072c4a;
+          box-shadow: 0 5px 0 #072c4a;
+  margin-top: -2px;
+  margin-bottom: 4px;
+}
+.btn-primary:hover {
+  -webkit-box-shadow: 0 4px 0 #072c4a;
+          box-shadow: 0 4px 0 #072c4a;
+  margin-top: -1px;
+  margin-bottom: 3px;
+}
+.btn-primary:active {
+  -webkit-box-shadow: 0 1px 0 #072c4a;
+          box-shadow: 0 1px 0 #072c4a;
+  margin-top: 2px;
+  margin-bottom: 0;
 }
 .btn-primary:after {
   -webkit-box-shadow: inset 0 3px 3px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 3px #0c4778;
           box-shadow: inset 0 3px 3px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 3px #0c4778;
 }
+.btn-primary.btn-lg, .btn-group-lg > .btn-primary.btn {
+  -webkit-box-shadow: 0 6px 0 #072c4a;
+          box-shadow: 0 6px 0 #072c4a;
+  margin-top: -6px;
+}
+.btn-primary.btn-lg:hover, .btn-group-lg > .btn-primary.btn:hover {
+  -webkit-box-shadow: 0 5px 0 #072c4a;
+          box-shadow: 0 5px 0 #072c4a;
+  margin-top: -5px;
+}
 .btn-primary.btn-lg:after, .btn-group-lg > .btn-primary.btn:after {
   -webkit-box-shadow: inset 0 4px 4px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 4px #0c4778;
           box-shadow: inset 0 4px 4px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 4px #0c4778;
 }
+.btn-primary.btn-sm, .btn-group-sm > .btn-primary.btn {
+  -webkit-box-shadow: 0 4px 0 #072c4a;
+          box-shadow: 0 4px 0 #072c4a;
+  margin-top: -4px;
+}
+.btn-primary.btn-sm:hover, .btn-group-sm > .btn-primary.btn:hover {
+  -webkit-box-shadow: 0 3px 0 #072c4a;
+          box-shadow: 0 3px 0 #072c4a;
+  margin-top: -3px;
+}
 .btn-primary.btn-sm:after, .btn-group-sm > .btn-primary.btn:after {
   -webkit-box-shadow: inset 0 2px 2px -1px rgba(255, 255, 255, 0.85), inset 0 0 0 2px #0c4778;
           box-shadow: inset 0 2px 2px -1px rgba(255, 255, 255, 0.85), inset 0 0 0 2px #0c4778;
+}
+.btn-primary.btn-xs, .btn-group-xs > .btn-primary.btn {
+  -webkit-box-shadow: 0 3px 0 #072c4a;
+          box-shadow: 0 3px 0 #072c4a;
+  margin-top: -3px;
+}
+.btn-primary.btn-xs:hover, .btn-group-xs > .btn-primary.btn:hover {
+  -webkit-box-shadow: 0 2px 0 #072c4a;
+          box-shadow: 0 2px 0 #072c4a;
+  margin-top: -2px;
 }
 .btn-primary.btn-xs:after, .btn-group-xs > .btn-primary.btn:after {
   -webkit-box-shadow: none;
@@ -7538,20 +7643,64 @@ body {
 }
 .btn-success {
   background-color: #5aa910;
-  -webkit-box-shadow: 0 6px 0 #284c07;
-          box-shadow: 0 6px 0 #284c07;
+  -webkit-box-shadow: 0 5px 0 #284c07;
+          box-shadow: 0 5px 0 #284c07;
+  margin-top: -2px;
+  margin-bottom: 4px;
+}
+.btn-success:hover {
+  -webkit-box-shadow: 0 4px 0 #284c07;
+          box-shadow: 0 4px 0 #284c07;
+  margin-top: -1px;
+  margin-bottom: 3px;
+}
+.btn-success:active {
+  -webkit-box-shadow: 0 1px 0 #284c07;
+          box-shadow: 0 1px 0 #284c07;
+  margin-top: 2px;
+  margin-bottom: 0;
 }
 .btn-success:after {
   -webkit-box-shadow: inset 0 3px 3px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 3px #417a0c;
           box-shadow: inset 0 3px 3px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 3px #417a0c;
 }
+.btn-success.btn-lg, .btn-group-lg > .btn-success.btn {
+  -webkit-box-shadow: 0 6px 0 #284c07;
+          box-shadow: 0 6px 0 #284c07;
+  margin-top: -6px;
+}
+.btn-success.btn-lg:hover, .btn-group-lg > .btn-success.btn:hover {
+  -webkit-box-shadow: 0 5px 0 #284c07;
+          box-shadow: 0 5px 0 #284c07;
+  margin-top: -5px;
+}
 .btn-success.btn-lg:after, .btn-group-lg > .btn-success.btn:after {
   -webkit-box-shadow: inset 0 4px 4px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 4px #417a0c;
           box-shadow: inset 0 4px 4px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 4px #417a0c;
 }
+.btn-success.btn-sm, .btn-group-sm > .btn-success.btn {
+  -webkit-box-shadow: 0 4px 0 #284c07;
+          box-shadow: 0 4px 0 #284c07;
+  margin-top: -4px;
+}
+.btn-success.btn-sm:hover, .btn-group-sm > .btn-success.btn:hover {
+  -webkit-box-shadow: 0 3px 0 #284c07;
+          box-shadow: 0 3px 0 #284c07;
+  margin-top: -3px;
+}
 .btn-success.btn-sm:after, .btn-group-sm > .btn-success.btn:after {
   -webkit-box-shadow: inset 0 2px 2px -1px rgba(255, 255, 255, 0.85), inset 0 0 0 2px #417a0c;
           box-shadow: inset 0 2px 2px -1px rgba(255, 255, 255, 0.85), inset 0 0 0 2px #417a0c;
+}
+.btn-success.btn-xs, .btn-group-xs > .btn-success.btn {
+  -webkit-box-shadow: 0 3px 0 #284c07;
+          box-shadow: 0 3px 0 #284c07;
+  margin-top: -3px;
+}
+.btn-success.btn-xs:hover, .btn-group-xs > .btn-success.btn:hover {
+  -webkit-box-shadow: 0 2px 0 #284c07;
+          box-shadow: 0 2px 0 #284c07;
+  margin-top: -2px;
 }
 .btn-success.btn-xs:after, .btn-group-xs > .btn-success.btn:after {
   -webkit-box-shadow: none;
@@ -7559,20 +7708,64 @@ body {
 }
 .btn-info {
   background-color: #b80203;
-  -webkit-box-shadow: 0 6px 0 #530101;
-          box-shadow: 0 6px 0 #530101;
+  -webkit-box-shadow: 0 5px 0 #530101;
+          box-shadow: 0 5px 0 #530101;
+  margin-top: -2px;
+  margin-bottom: 4px;
+}
+.btn-info:hover {
+  -webkit-box-shadow: 0 4px 0 #530101;
+          box-shadow: 0 4px 0 #530101;
+  margin-top: -1px;
+  margin-bottom: 3px;
+}
+.btn-info:active {
+  -webkit-box-shadow: 0 1px 0 #530101;
+          box-shadow: 0 1px 0 #530101;
+  margin-top: 2px;
+  margin-bottom: 0;
 }
 .btn-info:after {
   -webkit-box-shadow: inset 0 3px 3px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 3px #860102;
           box-shadow: inset 0 3px 3px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 3px #860102;
 }
+.btn-info.btn-lg, .btn-group-lg > .btn-info.btn {
+  -webkit-box-shadow: 0 6px 0 #530101;
+          box-shadow: 0 6px 0 #530101;
+  margin-top: -6px;
+}
+.btn-info.btn-lg:hover, .btn-group-lg > .btn-info.btn:hover {
+  -webkit-box-shadow: 0 5px 0 #530101;
+          box-shadow: 0 5px 0 #530101;
+  margin-top: -5px;
+}
 .btn-info.btn-lg:after, .btn-group-lg > .btn-info.btn:after {
   -webkit-box-shadow: inset 0 4px 4px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 4px #860102;
           box-shadow: inset 0 4px 4px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 4px #860102;
 }
+.btn-info.btn-sm, .btn-group-sm > .btn-info.btn {
+  -webkit-box-shadow: 0 4px 0 #530101;
+          box-shadow: 0 4px 0 #530101;
+  margin-top: -4px;
+}
+.btn-info.btn-sm:hover, .btn-group-sm > .btn-info.btn:hover {
+  -webkit-box-shadow: 0 3px 0 #530101;
+          box-shadow: 0 3px 0 #530101;
+  margin-top: -3px;
+}
 .btn-info.btn-sm:after, .btn-group-sm > .btn-info.btn:after {
   -webkit-box-shadow: inset 0 2px 2px -1px rgba(255, 255, 255, 0.85), inset 0 0 0 2px #860102;
           box-shadow: inset 0 2px 2px -1px rgba(255, 255, 255, 0.85), inset 0 0 0 2px #860102;
+}
+.btn-info.btn-xs, .btn-group-xs > .btn-info.btn {
+  -webkit-box-shadow: 0 3px 0 #530101;
+          box-shadow: 0 3px 0 #530101;
+  margin-top: -3px;
+}
+.btn-info.btn-xs:hover, .btn-group-xs > .btn-info.btn:hover {
+  -webkit-box-shadow: 0 2px 0 #530101;
+          box-shadow: 0 2px 0 #530101;
+  margin-top: -2px;
 }
 .btn-info.btn-xs:after, .btn-group-xs > .btn-info.btn:after {
   -webkit-box-shadow: none;
@@ -7580,20 +7773,64 @@ body {
 }
 .btn-warning {
   background-color: #f1a123;
-  -webkit-box-shadow: 0 6px 0 #a4680a;
-          box-shadow: 0 6px 0 #a4680a;
+  -webkit-box-shadow: 0 5px 0 #a4680a;
+          box-shadow: 0 5px 0 #a4680a;
+  margin-top: -2px;
+  margin-bottom: 4px;
+}
+.btn-warning:hover {
+  -webkit-box-shadow: 0 4px 0 #a4680a;
+          box-shadow: 0 4px 0 #a4680a;
+  margin-top: -1px;
+  margin-bottom: 3px;
+}
+.btn-warning:active {
+  -webkit-box-shadow: 0 1px 0 #a4680a;
+          box-shadow: 0 1px 0 #a4680a;
+  margin-top: 2px;
+  margin-bottom: 0;
 }
 .btn-warning:after {
   -webkit-box-shadow: inset 0 3px 3px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 3px #d4870d;
           box-shadow: inset 0 3px 3px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 3px #d4870d;
 }
+.btn-warning.btn-lg, .btn-group-lg > .btn-warning.btn {
+  -webkit-box-shadow: 0 6px 0 #a4680a;
+          box-shadow: 0 6px 0 #a4680a;
+  margin-top: -6px;
+}
+.btn-warning.btn-lg:hover, .btn-group-lg > .btn-warning.btn:hover {
+  -webkit-box-shadow: 0 5px 0 #a4680a;
+          box-shadow: 0 5px 0 #a4680a;
+  margin-top: -5px;
+}
 .btn-warning.btn-lg:after, .btn-group-lg > .btn-warning.btn:after {
   -webkit-box-shadow: inset 0 4px 4px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 4px #d4870d;
           box-shadow: inset 0 4px 4px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 4px #d4870d;
 }
+.btn-warning.btn-sm, .btn-group-sm > .btn-warning.btn {
+  -webkit-box-shadow: 0 4px 0 #a4680a;
+          box-shadow: 0 4px 0 #a4680a;
+  margin-top: -4px;
+}
+.btn-warning.btn-sm:hover, .btn-group-sm > .btn-warning.btn:hover {
+  -webkit-box-shadow: 0 3px 0 #a4680a;
+          box-shadow: 0 3px 0 #a4680a;
+  margin-top: -3px;
+}
 .btn-warning.btn-sm:after, .btn-group-sm > .btn-warning.btn:after {
   -webkit-box-shadow: inset 0 2px 2px -1px rgba(255, 255, 255, 0.85), inset 0 0 0 2px #d4870d;
           box-shadow: inset 0 2px 2px -1px rgba(255, 255, 255, 0.85), inset 0 0 0 2px #d4870d;
+}
+.btn-warning.btn-xs, .btn-group-xs > .btn-warning.btn {
+  -webkit-box-shadow: 0 3px 0 #a4680a;
+          box-shadow: 0 3px 0 #a4680a;
+  margin-top: -3px;
+}
+.btn-warning.btn-xs:hover, .btn-group-xs > .btn-warning.btn:hover {
+  -webkit-box-shadow: 0 2px 0 #a4680a;
+          box-shadow: 0 2px 0 #a4680a;
+  margin-top: -2px;
 }
 .btn-warning.btn-xs:after, .btn-group-xs > .btn-warning.btn:after {
   -webkit-box-shadow: none;
@@ -7601,20 +7838,64 @@ body {
 }
 .btn-danger {
   background-color: #b80203;
-  -webkit-box-shadow: 0 6px 0 #530101;
-          box-shadow: 0 6px 0 #530101;
+  -webkit-box-shadow: 0 5px 0 #530101;
+          box-shadow: 0 5px 0 #530101;
+  margin-top: -2px;
+  margin-bottom: 4px;
+}
+.btn-danger:hover {
+  -webkit-box-shadow: 0 4px 0 #530101;
+          box-shadow: 0 4px 0 #530101;
+  margin-top: -1px;
+  margin-bottom: 3px;
+}
+.btn-danger:active {
+  -webkit-box-shadow: 0 1px 0 #530101;
+          box-shadow: 0 1px 0 #530101;
+  margin-top: 2px;
+  margin-bottom: 0;
 }
 .btn-danger:after {
   -webkit-box-shadow: inset 0 3px 3px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 3px #860102;
           box-shadow: inset 0 3px 3px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 3px #860102;
 }
+.btn-danger.btn-lg, .btn-group-lg > .btn-danger.btn {
+  -webkit-box-shadow: 0 6px 0 #530101;
+          box-shadow: 0 6px 0 #530101;
+  margin-top: -6px;
+}
+.btn-danger.btn-lg:hover, .btn-group-lg > .btn-danger.btn:hover {
+  -webkit-box-shadow: 0 5px 0 #530101;
+          box-shadow: 0 5px 0 #530101;
+  margin-top: -5px;
+}
 .btn-danger.btn-lg:after, .btn-group-lg > .btn-danger.btn:after {
   -webkit-box-shadow: inset 0 4px 4px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 4px #860102;
           box-shadow: inset 0 4px 4px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 4px #860102;
 }
+.btn-danger.btn-sm, .btn-group-sm > .btn-danger.btn {
+  -webkit-box-shadow: 0 4px 0 #530101;
+          box-shadow: 0 4px 0 #530101;
+  margin-top: -4px;
+}
+.btn-danger.btn-sm:hover, .btn-group-sm > .btn-danger.btn:hover {
+  -webkit-box-shadow: 0 3px 0 #530101;
+          box-shadow: 0 3px 0 #530101;
+  margin-top: -3px;
+}
 .btn-danger.btn-sm:after, .btn-group-sm > .btn-danger.btn:after {
   -webkit-box-shadow: inset 0 2px 2px -1px rgba(255, 255, 255, 0.85), inset 0 0 0 2px #860102;
           box-shadow: inset 0 2px 2px -1px rgba(255, 255, 255, 0.85), inset 0 0 0 2px #860102;
+}
+.btn-danger.btn-xs, .btn-group-xs > .btn-danger.btn {
+  -webkit-box-shadow: 0 3px 0 #530101;
+          box-shadow: 0 3px 0 #530101;
+  margin-top: -3px;
+}
+.btn-danger.btn-xs:hover, .btn-group-xs > .btn-danger.btn:hover {
+  -webkit-box-shadow: 0 2px 0 #530101;
+          box-shadow: 0 2px 0 #530101;
+  margin-top: -2px;
 }
 .btn-danger.btn-xs:after, .btn-group-xs > .btn-danger.btn:after {
   -webkit-box-shadow: none;
