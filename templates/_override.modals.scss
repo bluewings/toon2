@@ -1,0 +1,159 @@
+
+$modal-colors: (
+    default: (
+        bg: $modal-default-heading-bg
+    ),
+    primary: (
+        bg: $modal-primary-heading-bg
+    ),
+    success: (
+        bg: $modal-success-heading-bg
+    ),
+    info: (
+        bg: $modal-info-heading-bg
+    ),
+    warning: (
+        bg: $modal-warning-heading-bg
+    ),
+    danger: (
+        bg: $modal-danger-heading-bg
+    )
+);
+
+
+@mixin modal-deco-class($className) {
+    $bg-color: map-deep-get($modal-colors, $className, "bg");
+
+    // &-#{$className} {
+    border: 3px solid  $bg-color;
+    background-color:  $bg-color;
+
+    box-shadow: 0 1px 0 darken($bg-color, 20%), 0 6px 0 darken($bg-color, 20%), 0 8px 4px 1px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(0, 0, 0, 0.5);
+    .modal-footer {
+        border-top: 3px solid  $bg-color;
+        background-color:#fff;
+        border-radius: 7px;   
+    // }
+        // background-color: $bg-color;
+
+        // &:hover, &:focus, &:active {
+        //     background-color: $bg-color !important;
+        // }
+
+        // @include modal-deco-shadow($bg-color, 5px);
+
+        // &:after {
+        //     box-shadow: inset 0 3px 3px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 3px darken($bg-color, 10%);
+        // }
+
+        // &.btn-lg {
+        //     @include modal-deco-shadow($bg-color, 6px);
+
+        //     &:after {
+        //         box-shadow: inset 0 4px 4px -2px rgba(255, 255, 255, 0.85), inset 0 0 0 4px darken($bg-color, 10%);
+        //     }
+        // }
+
+        // &.btn-sm {
+        //     @include modal-deco-shadow($bg-color, 4px);
+
+        //     &:after {
+        //         box-shadow: inset 0 2px 2px -1px rgba(255, 255, 255, 0.85), inset 0 0 0 2px darken($bg-color, 10%);
+        //     }
+        // }
+
+        // &.btn-xs {
+        //     @include modal-deco-shadow($bg-color, 3px);
+
+        //     &:after {
+        //         box-shadow: none;
+        //     }
+        // }
+    }
+}
+
+
+// // Contextual variations
+// .modal-default {
+//   @include modal-variant($modal-default-border, $modal-default-text, $modal-default-heading-bg, $modal-default-border);
+// }
+// .modal-primary {
+//   @include modal-variant($modal-primary-border, $modal-primary-text, $modal-primary-heading-bg, $modal-primary-border);
+// }
+// .modal-success {
+//   @include modal-variant($modal-success-border, $modal-success-text, $modal-success-heading-bg, $modal-success-border);
+// }
+// .modal-info {
+//   @include modal-variant($modal-info-border, $modal-info-text, $modal-info-heading-bg, $modal-info-border);
+// }
+// .modal-warning {
+//   @include modal-variant($modal-warning-border, $modal-warning-text, $modal-warning-heading-bg, $modal-warning-border);
+// }
+// .modal-danger {
+//   @include modal-variant($modal-danger-border, $modal-danger-text, $modal-danger-heading-bg, $modal-danger-border);
+// }
+$color-base-default: #777;
+.modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+    // border: 3px solid #5C5450;
+    // background-color: #5C5450;
+    
+    .modal-header {
+        position: relative;
+        background-color: transparent;
+        color: #fff;
+        text-align: center;
+        text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black, -1px 2px 0 rgba(0, 0, 0, 0.7), 0px 2px 0 rgba(0, 0, 0, 0.7), 1px 2px 0 rgba(0, 0, 0, 0.7);
+border:none;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 0 0 5px 5px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 6px;
+            top: 5px;
+            right: 5px;
+            top: 2px;
+            right: 2px;
+
+            // background-image: -webkit-gradient(linear, 0% 0, 100% 0, from(rgba(255, 255, 255, 0.54902)), color-stop(0.5, rgba(255, 255, 255, 0)), color-stop(0.8, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.498039)));
+            background-color: rgba(255, 255, 255, 0.75);
+            border-radius: 10% 10px 10% 10px;
+        }
+    }
+
+    .modal-body {
+        background-color: #fff;
+        // background-color: #E4E4D4;
+        border-radius: 7px;
+    }
+    .modal-footer {
+
+        border-radius: 7px;   
+    }
+}
+
+.modal-content {
+    @include modal-deco-class(default);
+
+    // @include modal-deco-class(primary);
+
+    // @include modal-deco-class(success);
+
+    // @include modal-deco-class(info);
+
+    // @include modal-deco-class(warning);
+
+    // @include modal-deco-class(danger);
+}

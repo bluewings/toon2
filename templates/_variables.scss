@@ -24,6 +24,23 @@ $brand-info:            #5bc0de !default;
 $brand-warning:         #f1a123 !default;
 $brand-danger:          #b80203 !default;
 
+
+
+$panel-default-heading-bg: $btn-default-bg !default;
+$panel-primary-heading-bg: $brand-primary !default;
+$panel-success-heading-bg: $brand-success !default;
+$panel-info-heading-bg: $brand-info !default;
+$panel-warning-heading-bg: $brand-warning !default;
+$panel-danger-heading-bg: $brand-danger !default;
+
+
+$modal-default-heading-bg: $btn-default-bg !default;
+$modal-primary-heading-bg: $brand-primary !default;
+$modal-success-heading-bg: $brand-success !default;
+$modal-info-heading-bg: $brand-info !default;
+$modal-warning-heading-bg: $brand-warning !default;
+$modal-danger-heading-bg: $brand-danger !default;
+
 $dropdown-border:       #333 !default;
 
 $brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
