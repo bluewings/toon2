@@ -1,0 +1,59 @@
+$btn-colors: (
+    default: (
+        bg: $btn-default-bg
+    ),
+    primary: (
+        bg: $btn-primary-bg
+    ),
+    success: (
+        bg: $btn-success-bg
+    ),
+    info: (
+        bg: $btn-info-bg
+    ),
+    warning: (
+        bg: $btn-warning-bg
+    ),
+    danger: (
+        bg: $btn-danger-bg
+    )
+);
+
+.navbar {
+    border-radius: 10px;
+    position: relative;
+    // z-index:-1;
+
+
+    &:before {
+        content: '';
+        position: absolute;
+        top:3px;
+        left:3px;
+        right:3px;
+        // width:100%;
+        z-index:0;
+        background-color:rgba(255,255,255,.15);
+        height:22px;
+        display:block;
+        border-radius:7px;
+    }
+    // &.navbar-default {
+    //     &:before {
+    //         background-color:rgba(0,0,0,.05);
+    //     }
+        
+    // }
+    > .container, > .container-fluid {
+    
+        position:relative;
+        z-index:0;
+    }   
+
+    .dropdown-menu {
+        margin-top:3px !important;
+        z-index:2;
+    }
+    // }
+    
+}

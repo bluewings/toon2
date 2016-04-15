@@ -7378,6 +7378,31 @@ body {
     font-family: 'Hanna', serif;*/
 }
 
+.navbar {
+  border-radius: 10px;
+  position: relative;
+}
+.navbar:before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  z-index: 0;
+  background-color: rgba(255, 255, 255, 0.15);
+  height: 22px;
+  display: block;
+  border-radius: 7px;
+}
+.navbar > .container, .navbar > .container-fluid {
+  position: relative;
+  z-index: 0;
+}
+.navbar .dropdown-menu {
+  margin-top: 3px !important;
+  z-index: 2;
+}
+
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle):after {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
@@ -8229,4 +8254,9 @@ body {
   border-top: 3px solid #777;
   background-color: #fff;
   border-radius: 7px;
+}
+
+input.form-control {
+  border-top-width: 3px;
+  border-radius: 10px;
 }
