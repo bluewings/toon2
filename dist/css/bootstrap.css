@@ -7398,6 +7398,13 @@ body {
   position: relative;
   z-index: 0;
 }
+.navbar > .container .navbar-form, .navbar > .container-fluid .navbar-form {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.navbar > .container .navbar-form input.form-control, .navbar > .container-fluid .navbar-form input.form-control {
+  height: 36px;
+}
 .navbar .dropdown-menu {
   margin-top: 3px !important;
   z-index: 2;

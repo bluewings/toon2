@@ -48,7 +48,15 @@ $btn-colors: (
     
         position:relative;
         z-index:0;
+        .navbar-form {
+            margin-top:7px;
+            margin-bottom:7px;
+            input.form-control {
+                height:36px;
+            }
+        }
     }   
+
 
     .dropdown-menu {
         margin-top:3px !important;
