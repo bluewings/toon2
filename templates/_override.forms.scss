@@ -1,4 +1,72 @@
+$input-sizes: (large: (border-radius: 12px, padding-h: $padding-large-horizontal, flare: 10px 12px, font-size: 18px, height: 44px), base: (border-radius: 10px, padding-h: $padding-base-horizontal, flare: 8px 10px, font-size: 14px, height: 32px), small: (border-radius: 8px, padding-h: $padding-small-horizontal, flare: 7px 8px, font-size: 12px, height: 28px), xs: (border-radius: 6px, padding-h: $padding-xs-horizontal, flare: 5px 6px, font-size: 10px, height: 22px));
+
 input.form-control {
     border-top-width: 3px;
-    border-radius:10px;
+
+    // border-radius: 10px;
 }
+
+.form-control {
+    height: 37px;
+
+    &.input-lg {
+        height: 49px;
+    }
+
+    &.input-sm {
+        height: 33px;
+    }
+}
+
+.input-group {
+    .form-control {
+        height: 37px;
+    }
+
+    &.input-group-lg {
+        .form-control {
+            height: 49px;
+        }
+    }
+
+    &.input-group-sm {
+        .form-control {
+            height: 33px;
+        }
+    }
+
+    .input-group-btn {
+        top: -1px;
+        vertical-align: bottom;
+    }
+}
+
+.form-horizontal .control-label {
+    padding-bottom: 5px;
+}
+
+// @include input-size('.input-sm', $input-height-small, $padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $input-border-radius-small);
+// .form-group-sm {
+//   .form-control {
+//     height: $input-height-small;
+//     padding: $padding-small-vertical $padding-small-horizontal;
+//     font-size: $font-size-small;
+//     line-height: $line-height-small;
+//     border-radius: $input-border-radius-small;
+//   }
+//   select.form-control {
+//     height: $input-height-small;
+//     line-height: $input-height-small;
+//   }
+//   textarea.form-control,
+//   select[multiple].form-control {
+//     height: auto;
+//   }
+//   .form-control-static {
+//     height: $input-height-small;
+//     min-height: ($line-height-computed + $font-size-small);
+//     padding: ($padding-small-vertical + 1) $padding-small-horizontal;
+//     font-size: $font-size-small;
+//     line-height: $line-height-small;
+//   }
+// }

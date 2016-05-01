@@ -21,28 +21,28 @@ $btn-colors: (
 
 $btn-sizes: (
     large: (
-        border-radius: 12px,
+        border-radius: $border-radius-large,
         padding-h: $padding-large-horizontal,
         flare: 10px 12px,
         font-size: 18px,
         height: 44px
     ),
     base: (
-        border-radius: 10px,
+        border-radius: $border-radius-base,
         padding-h: $padding-base-horizontal,
         flare: 8px 10px,
         font-size: 14px,
         height: 32px
     ),
     small: (
-        border-radius: 8px,
+        border-radius: $border-radius-small,
         padding-h: $padding-small-horizontal,
         flare: 7px 8px,
         font-size: 12px,
         height: 28px
     ),
     xs: (
-        border-radius: 6px,
+        border-radius: $border-radius-xs,
         padding-h: $padding-xs-horizontal,
         flare: 5px 6px,
         font-size: 10px,
@@ -149,7 +149,7 @@ $btn-sizes: (
     }
 }
 
-.btn-group {
+.btn-group, .input-group {
     > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
         &:after {
             border-bottom-right-radius: 0;
@@ -179,6 +179,13 @@ $btn-sizes: (
             border-bottom-left-radius: 0;
             border-top-left-radius: 0;
             left: -1px;
+        }
+    }
+
+    > .input-group-btn:last-child:not(:first-child) > .btn:first-child {
+        &:after {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
         }
     }
 }
@@ -236,4 +243,32 @@ $btn-sizes: (
     @include button-deco-class(warning);
 
     @include button-deco-class(danger);
+}
+
+.input-group {
+    > .input-group-btn > .btn {
+        @include button-deco-size(base);
+    }
+
+    &-lg > .input-group-btn > .btn {
+        @include button-deco-size(large);
+    }
+
+    &-sm > .input-group-btn > .btn {
+        @include button-deco-size(small);
+    }
+
+    // &-xs > .input-group-btn > .btn {
+    //     @include button-deco-size(xs);
+    // }
+
+    > .input-group-btn:last-child:not(:first-child) > .btn:first-child {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+
+        &:after {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+        }
+    }
 }

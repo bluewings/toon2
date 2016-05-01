@@ -1,0 +1,99 @@
+//
+// Thumbnails
+// --------------------------------------------------
+
+// Mixin and adjust the regular image class
+.thumbnail {
+    display: block;
+    padding: $thumbnail-padding;
+    margin-bottom: $line-height-computed;
+    line-height: $line-height-base;
+    background-color: $thumbnail-bg;
+    border: 1px solid $thumbnail-border;
+    border-radius: $thumbnail-border-radius;
+
+    @include transition(border 0.2s ease-in-out);
+
+    > img,
+    a > img {
+        @include img-responsive;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    // [converter] extracted a&:hover, a&:focus, a&.active to a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active
+
+    // Image captions
+    .caption {
+        padding: $thumbnail-caption-padding;
+        color: $thumbnail-caption-color;
+    }
+}
+
+// Add a hover state for linked versions only
+a.thumbnail:hover,
+a.thumbnail:focus,
+a.thumbnail.active {
+    border-color: $link-color;
+}
+$shin-w:5px;
+.card-wrap {
+    border: $shin-w solid black;
+    border-radius: $shin-w * 3;
+  display:inline-block;
+  overflow:hidden;
+  vertical-align: bottom;
+  position:relative;
+
+
+  &:after {
+    content: '';
+    position:absolute;
+    top: $shin-w;
+    left: $shin-w;
+    right: $shin-w;
+    bottom: $shin-w;
+    // top: 0;
+    // left:0;
+    // right:0;
+    // bottom:0;
+    // background-color:#fff;
+    border-radius: $shin-w ;
+    pointer-events:none;
+    // border-top:$shin-w solid rgba(255,255,255,.7);
+    // border-bottom:$shin-w solid rgba(255,255,255,.5);
+    // border-left:$shin-w solid rgba(255,255,255,.15);
+    // border-right:$shin-w solid rgba(255,255,255,.3);
+    // overflow:hidden;
+    box-shadow: 
+      0 $shin-w * -1 $shin-w   0 rgba(255,255,255,.9),
+      $shin-w 0 $shin-w  0 rgba(255,255,255,.35),
+      0 $shin-w $shin-w  0 rgba(255,255,255,.7),
+      $shin-w * -1 0 $shin-w  0 rgba(255,255,255,.15);
+
+
+    box-shadow: 
+      0 $shin-w * -1 $shin-w 0 rgba(255,255,255,.9),
+      0 $shin-w $shin-w  0 rgba(255,255,255,.6);
+    // box-shadow: $shin-w 0 0 $shin-w rgba(255,255,255, .5),
+    //   -$shin-w 0 0 $shin-w rgba(255,255,255, .3);
+    // box-shadow:0 0 10px
+
+  }
+}
+
+.img-card {
+    // border: 3px solid black;
+    // border-radius: 12px;
+    // padding: $thumbnail-padding;
+    // line-height: $line-height-base;
+    // background-color: $thumbnail-bg;
+    // border: 1px solid $thumbnail-border;
+    // border-radius: $thumbnail-border-radius;
+
+    // @include transition(all 0.2s ease-in-out);
+
+    // // Keep them at most 100% wide
+    // @include img-responsive(inline-block);
+}
