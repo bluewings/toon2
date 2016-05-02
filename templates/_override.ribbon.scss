@@ -17,11 +17,58 @@ $left-p: 12px;
 $left-1: 12px;
 
 $ribbon-color: #FF232E;
-$ribbon-color: $brand-warning;
+$ribbon-color: $brand-primary;
 $ribbon-height: 50px;
-$ribbon-border: 2px;
-$ribbon-bottom: 4px;
-$ribbon-border-color:darken($ribbon-color, 20%);
+$ribbon-border: 3px;
+$ribbon-bottom: 5px;
+$ribbon-border-color: darken($ribbon-color, 20%);
+
+$rb-shadow: ($ribbon-bottom + $ribbon-border) / 2;
+
+@mixin ribbon-deco($color) {
+    $border-color: darken($color, 20%);
+
+    background-color: $color;
+    border-color: $border-color;
+
+    &:before, &:after {
+        border-color: $color;
+    }
+
+    &:before {
+        left: $left-p * -1 + $magic-n * 0.67 - $left-1 - $ribbon-border;
+        box-shadow: $rb-shadow ($rb-shadow - $ribbon-border) 0 $rb-shadow $border-color;
+    border-left-color: transparent;
+    }
+
+    &:after {
+        // border-color: red;
+        right: $left-p * -1 + $magic-n * 0.67 - $left-1 - $ribbon-border - 1;
+        box-shadow: ($rb-shadow * -1) ($rb-shadow - $ribbon-border) 0 $rb-shadow $border-color;
+   border-right-color: transparent;
+    }
+
+    &:before {
+        // left: $left-p * -1 + $magic-n * 0.67 - $left-1 - $ribbon-border;
+        
+        // box-shadow: $rb-shadow ($rb-shadow - $ribbon-border) 0 $rb-shadow $ribbon-border-color;
+    }
+
+    &:after {
+        // border-color: red;
+        // right: $left-p * -1 + $magic-n * 0.67 - $left-1 - $ribbon-border - 1;
+        
+        // box-shadow: ($rb-shadow * -1) ($rb-shadow - $ribbon-border) 0 $rb-shadow $ribbon-border-color;
+    }
+
+    > div {
+     
+     
+        &:before, &:after {
+            border-color: $border-color transparent transparent transparent;
+        }
+    }
+}
 
 .navbar-ribbon {
     box-sizing: content-box;
@@ -31,16 +78,15 @@ $ribbon-border-color:darken($ribbon-color, 20%);
     border-bottom-right-radius: 0;
     height: $ribbon-height;
     text-align: center;
-    background-color: $ribbon-color;
-    border-color: $ribbon-border-color;
     border-style: solid;
     border-width: $ribbon-border;
     border-bottom-width: $ribbon-bottom;
-    .navbar-right {
-        height:$ribbon-height;
-        line-height:$ribbon-height;
-        padding-right:15px;
 
+
+    .navbar-right {
+        height: $ribbon-height;
+        line-height: $ribbon-height;
+        padding-right: 15px;
     }
 
     // border-bottom:5px darken($ribbon-color,80%) solid;
@@ -59,16 +105,14 @@ $ribbon-border-color:darken($ribbon-color, 20%);
 
         // top:100%;
         top: $magic-n;
-        bottom: -$magic-n - $ribbon-bottom;
-        border-color: $ribbon-color;
+        bottom: -$magic-n;
         border-width: $left-p / 2;
         border-style: solid;
         display: block;
-        width: $left-p + $left-1;
+        width: $left-p + $left-1 - $ribbon-bottom;
         height: auto;
-        border-top-width: ceil(($ribbon-height + $ribbon-bottom)/ 2);
-        border-bottom-width: ceil(($ribbon-height + $ribbon-bottom)/ 2);
-
+        border-top-width: ceil($ribbon-height / 2);
+        border-bottom-width: ceil($ribbon-height / 2);
 
         // height:20px;
         // border: .9em solid #1eb2df;
@@ -76,35 +120,27 @@ $ribbon-border-color:darken($ribbon-color, 20%);
         border-radius: 0;
     }
 
-    $rb-shadow: ($ribbon-bottom + $ribbon-border) / 2;
 
-    &:before {
-        left: $left-p * -1 + $magic-n * 0.67 - $left-1 - $ribbon-border;
-        border-left-color: transparent;
-        box-shadow:
-$rb-shadow
-$rb-shadow - $ribbon-border
 
-        0
 
-        $rb-shadow
-        $ribbon-border-color;
+
+    @include ribbon-deco($brand-primary);
+
+    &-success {
+        @include ribbon-deco($brand-success);
     }
 
-    &:after {
-        // border-color: red;
-        right: $left-p * -1 + $magic-n * 0.67 - $left-1 - $ribbon-border - 1;
-        border-right-color: transparent;
-               box-shadow:
-$rb-shadow * -1
-$rb-shadow - $ribbon-border
-
-        0
-
-        $rb-shadow
-        $ribbon-border-color;
+    &-info {
+        @include ribbon-deco($brand-info);
     }
 
+    &-warning {
+        @include ribbon-deco($brand-warning);
+    }
+
+    &-danger {
+        @include ribbon-deco($brand-danger);
+    }
     // &:before {
     //         left: -1.35em;
     //     border-right-width: .75em;
@@ -122,19 +158,19 @@ $rb-shadow - $ribbon-border
             position: absolute;
             content: '';
             bottom: -$magic-n - $ribbon-bottom;
-            border-color: $ribbon-border-color transparent transparent transparent;
+            
             border-style: solid;
             display: block;
             z-index: -1;
         }
 
         &:before {
-            left: $ribbon-border  * -1;
+            left: $ribbon-border * -1;
             border-width: $magic-n 0 0 ($magic-n * 0.67);
         }
 
         &:after {
-            right: $ribbon-border  * -1;
+            right: $ribbon-border * -1;
             border-width: $magic-n ($magic-n * 0.67) 0 0;
         }
     }
