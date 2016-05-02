@@ -1,0 +1,194 @@
+// @import url(http://fonts.googleapis.com/css?family=Patua+One);
+
+// * {
+//     margin: 0px;
+//     padding: 0px;
+// }
+
+// html {
+//     width: 100%;
+//     height: 100%;
+//     background: -webkit-radial-gradient(rgba(80, 0, 0, 0.1) 0%, rgba(80, 0, 0, 0.2) 30%, rgba(21, 11, 1, 0.9) 100%), url("http://subtlepatterns.com/patterns/wood_pattern.png");
+//     text-align: center;
+// }
+
+$magic-n: 16px;
+$left-p: 12px;
+$left-1: 12px;
+
+$ribbon-color: #FF232E;
+$ribbon-color: $brand-primary;
+$ribbon-height: 50px;
+$ribbon-border: 2px;
+$ribbon-bottom: 4px;
+$ribbon-border-color:darken($ribbon-color, 20%);
+
+.navbar-ribbon {
+    box-sizing: content-box;
+    background-color: $ribbon-color;
+    background-color: lightyellow;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    height: $ribbon-height;
+    text-align: center;
+    background-color: $ribbon-color;
+    border-color: $ribbon-border-color;
+    border-style: solid;
+    border-width: 2px;
+    border-bottom-width: $ribbon-bottom;
+
+    // border-bottom:5px darken($ribbon-color,80%) solid;
+
+    .navbar-text {
+        color: #fff;
+        color: #fff;
+        text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black, -1px 2px 0 rgba(0, 0, 0, 0.7), 0px 2px 0 rgba(0, 0, 0, 0.7), 1px 2px 0 rgba(0, 0, 0, 0.7);
+    }
+
+    position: relative;
+
+    &:before, &:after {
+        position: absolute;
+        content: '';
+
+        // top:100%;
+        top: $magic-n;
+        bottom: -$magic-n - $ribbon-bottom;
+        border-color: $ribbon-color;
+        border-width: $left-p / 2;
+        border-style: solid;
+        display: block;
+        width: $left-p + $left-1;
+        height: auto;
+        border-top-width: ($ribbon-height + $ribbon-bottom)/ 2;
+        border-bottom-width: ($ribbon-height + $ribbon-bottom)/ 2;
+
+
+        // height:20px;
+        // border: .9em solid #1eb2df;
+        z-index: -2;
+        border-radius: 0;
+    }
+
+    $rb-shadow: ($ribbon-bottom + $ribbon-border) / 2;
+
+    &:before {
+        left: $left-p * -1 + $magic-n * 0.67 - $left-1 - $ribbon-border;
+        border-left-color: transparent;
+        box-shadow:
+$rb-shadow
+$rb-shadow - $ribbon-border
+
+        0
+
+        $rb-shadow
+        $ribbon-border-color;
+    }
+
+    &:after {
+        // border-color: red;
+        right: $left-p * -1 + $magic-n * 0.67 - $left-1 - $ribbon-border - 1;
+        border-right-color: transparent;
+               box-shadow:
+$rb-shadow * -1
+$rb-shadow - $ribbon-border
+
+        0
+
+        $rb-shadow
+        $ribbon-border-color;
+    }
+
+    // &:before {
+    //         left: -1.35em;
+    //     border-right-width: .75em;
+    //     border-left-color: transparent;
+    // }
+    > div {
+        height: $ribbon-height;
+
+        > div {
+            display: inline-block;
+            float: none;
+        }
+
+        &:before, &:after {
+            position: absolute;
+            content: '';
+            bottom: -$magic-n - $ribbon-bottom;
+            border-color: $ribbon-border-color transparent transparent transparent;
+            border-style: solid;
+            display: block;
+            z-index: -1;
+        }
+
+        &:before {
+            left: $ribbon-border  * -1;
+            border-width: $magic-n 0 0 ($magic-n * 0.67);
+        }
+
+        &:after {
+            right: $ribbon-border  * -1;
+            border-width: $magic-n ($magic-n * 0.67) 0 0;
+        }
+    }
+}
+
+.ribbon {
+    padding: .34em 1em;
+    margin: 0;
+    margin-top: 5%;
+    position: relative;
+    color: #ffffff;
+
+    // font: 32px 'Patua One', sans-serif;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.4);
+    background: -webkit-linear-gradient(top, #1eb2df, #17a7d2);
+    display: inline-block;
+
+    &:before, &:after {
+        content: "";
+        width: .2em;
+        bottom: -.5em;
+        position: absolute;
+        display: block;
+        border: .9em solid #1eb2df;
+        box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+        z-index: -2;
+    }
+
+    &:before {
+        left: -1.35em;
+        border-right-width: .75em;
+        border-left-color: transparent;
+    }
+
+    &:after {
+        right: -1.35em;
+        border-left-width: .75em;
+        border-right-color: transparent;
+    }
+
+    .content:before, .content:after {
+        content: "";
+        bottom: -.5em;
+        position: absolute;
+        display: block;
+        border-style: solid;
+        border-color: #0675b3 transparent transparent transparent;
+        z-index: -1;
+    }
+
+    .content:before {
+        left: 0;
+        border-width: .5em 0 0 .5em;
+    }
+
+    .content:after {
+        right: 0;
+        border-width: .5em .5em 0 0;
+    }
+}

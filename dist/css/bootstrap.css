@@ -8410,10 +8410,20 @@ a.thumbnail.active {
 }
 
 .navbar-ribbon {
-  background-color: #FF232E;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+  background-color: #1063a7;
+  background-color: lightyellow;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  height: 50px;
   text-align: center;
+  background-color: #1063a7;
+  border-color: #072c4a;
+  border-style: solid;
+  border-width: 2px;
+  border-bottom-width: 4px;
   position: relative;
 }
 .navbar-ribbon .navbar-text {
@@ -8425,12 +8435,12 @@ a.thumbnail.active {
   position: absolute;
   content: '';
   top: 16px;
-  bottom: -16px;
-  border-color: blue;
-  border-width: 10px;
+  bottom: -20px;
+  border-color: #1063a7;
+  border-width: 6px;
   border-style: solid;
   display: block;
-  width: 30px;
+  width: 24px;
   height: auto;
   border-top-width: 27px;
   border-bottom-width: 27px;
@@ -8438,13 +8448,19 @@ a.thumbnail.active {
   border-radius: 0;
 }
 .navbar-ribbon:before {
-  left: -19.28px;
+  left: -15.28px;
   border-left-color: transparent;
+  -webkit-box-shadow: 3px 1px 0 3px #072c4a;
+          box-shadow: 3px 1px 0 3px #072c4a;
 }
 .navbar-ribbon:after {
-  border-color: red;
-  right: -19.28px;
+  right: -16.28px;
   border-right-color: transparent;
+  -webkit-box-shadow: -3px 1px 0 3px #072c4a;
+          box-shadow: -3px 1px 0 3px #072c4a;
+}
+.navbar-ribbon > div {
+  height: 50px;
 }
 .navbar-ribbon > div > div {
   display: inline-block;
@@ -8453,18 +8469,18 @@ a.thumbnail.active {
 .navbar-ribbon > div:before, .navbar-ribbon > div:after {
   position: absolute;
   content: '';
-  bottom: -16px;
-  border-color: black transparent transparent transparent;
+  bottom: -20px;
+  border-color: #072c4a transparent transparent transparent;
   border-style: solid;
   display: block;
   z-index: -1;
 }
 .navbar-ribbon > div:before {
-  left: 0;
+  left: -2px;
   border-width: 16px 0 0 10.72px;
 }
 .navbar-ribbon > div:after {
-  right: 0;
+  right: -2px;
   border-width: 16px 10.72px 0 0;
 }
 
