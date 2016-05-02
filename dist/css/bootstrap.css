@@ -8413,18 +8413,23 @@ a.thumbnail.active {
   -webkit-box-sizing: content-box;
      -moz-box-sizing: content-box;
           box-sizing: content-box;
-  background-color: #1063a7;
+  background-color: #f1a123;
   background-color: lightyellow;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   height: 50px;
   text-align: center;
-  background-color: #1063a7;
-  border-color: #072c4a;
+  background-color: #f1a123;
+  border-color: #a4680a;
   border-style: solid;
   border-width: 2px;
   border-bottom-width: 4px;
   position: relative;
+}
+.navbar-ribbon .navbar-right {
+  height: 50px;
+  line-height: 50px;
+  padding-right: 15px;
 }
 .navbar-ribbon .navbar-text {
   color: #fff;
@@ -8436,7 +8441,7 @@ a.thumbnail.active {
   content: '';
   top: 16px;
   bottom: -20px;
-  border-color: #1063a7;
+  border-color: #f1a123;
   border-width: 6px;
   border-style: solid;
   display: block;
@@ -8450,14 +8455,14 @@ a.thumbnail.active {
 .navbar-ribbon:before {
   left: -15.28px;
   border-left-color: transparent;
-  -webkit-box-shadow: 3px 1px 0 3px #072c4a;
-          box-shadow: 3px 1px 0 3px #072c4a;
+  -webkit-box-shadow: 3px 1px 0 3px #a4680a;
+          box-shadow: 3px 1px 0 3px #a4680a;
 }
 .navbar-ribbon:after {
   right: -16.28px;
   border-right-color: transparent;
-  -webkit-box-shadow: -3px 1px 0 3px #072c4a;
-          box-shadow: -3px 1px 0 3px #072c4a;
+  -webkit-box-shadow: -3px 1px 0 3px #a4680a;
+          box-shadow: -3px 1px 0 3px #a4680a;
 }
 .navbar-ribbon > div {
   height: 50px;
@@ -8470,7 +8475,7 @@ a.thumbnail.active {
   position: absolute;
   content: '';
   bottom: -20px;
-  border-color: #072c4a transparent transparent transparent;
+  border-color: #a4680a transparent transparent transparent;
   border-style: solid;
   display: block;
   z-index: -1;

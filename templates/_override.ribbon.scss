@@ -17,7 +17,7 @@ $left-p: 12px;
 $left-1: 12px;
 
 $ribbon-color: #FF232E;
-$ribbon-color: $brand-primary;
+$ribbon-color: $brand-warning;
 $ribbon-height: 50px;
 $ribbon-border: 2px;
 $ribbon-bottom: 4px;
@@ -34,8 +34,14 @@ $ribbon-border-color:darken($ribbon-color, 20%);
     background-color: $ribbon-color;
     border-color: $ribbon-border-color;
     border-style: solid;
-    border-width: 2px;
+    border-width: $ribbon-border;
     border-bottom-width: $ribbon-bottom;
+    .navbar-right {
+        height:$ribbon-height;
+        line-height:$ribbon-height;
+        padding-right:15px;
+
+    }
 
     // border-bottom:5px darken($ribbon-color,80%) solid;
 
@@ -60,8 +66,8 @@ $ribbon-border-color:darken($ribbon-color, 20%);
         display: block;
         width: $left-p + $left-1;
         height: auto;
-        border-top-width: ($ribbon-height + $ribbon-bottom)/ 2;
-        border-bottom-width: ($ribbon-height + $ribbon-bottom)/ 2;
+        border-top-width: ceil(($ribbon-height + $ribbon-bottom)/ 2);
+        border-bottom-width: ceil(($ribbon-height + $ribbon-bottom)/ 2);
 
 
         // height:20px;
